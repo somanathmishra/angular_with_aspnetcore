@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { AppRoutingModule } from './app-routing.module';
+import { Router } from '@angular/router';
 import { AppComponent } from './app.component';
 import { LoginPageComponent } from './AdminConfig/login-page/login-page.component';
 import { RegistrationPageComponent } from './AdminConfig/registration-page/registration-page.component';
@@ -21,7 +21,7 @@ import { ThomsonRegistrationComponent } from './BeSpokeConfig/thomson-registrati
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    Router
   ],
   providers: [],
   bootstrap: [AppComponent]

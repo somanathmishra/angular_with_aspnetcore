@@ -32,7 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>login-page works!</p>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>login-page works!</p>\r\n");
 
 /***/ }),
 
@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>registration-page works!</p>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>registration-page works!</p>\r\n");
 
 /***/ }),
 
@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>deezer-registration works!</p>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>deezer-registration works!</p>\r\n");
 
 /***/ }),
 
@@ -71,7 +71,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>thomson-registration works!</p>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>thomson-registration works!</p>\r\n");
 
 /***/ }),
 
@@ -84,7 +84,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\r\n<h1>Sample HttpPost data example</h1>\r\n\r\n\r\n\r\n<html>\r\n<body>\r\n  <div>{{postvalue}}</div>\r\n\r\n  <div *ngIf=\"postvalue==='login'\">\r\n\r\n    <app-login-page> </app-login-page>\r\n\r\n  </div>\r\n  <div *ngIf=\"postvalue==='register'\">\r\n\r\n    <app-registration-page> </app-registration-page>\r\n\r\n  </div>\r\n\r\n</body>\r\n</html>\r\n\r\n\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\r\n<h1>Sample HttpPost data example</h1>\r\n\r\n\r\n\r\n<html>\r\n<body>\r\n  \r\n\r\n</body>\r\n</html>\r\n\r\n\r\n");
 
 /***/ }),
 
@@ -391,6 +391,7 @@ __webpack_require__.r(__webpack_exports__);
 let RegistrationPageComponent = class RegistrationPageComponent {
     constructor() { }
     ngOnInit() {
+        console.log("Inside Registration");
     }
 };
 RegistrationPageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -493,36 +494,6 @@ ThomsonRegistrationComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"](
 
 /***/ }),
 
-/***/ "./src/app/app-routing.module.ts":
-/*!***************************************!*\
-  !*** ./src/app/app-routing.module.ts ***!
-  \***************************************/
-/*! exports provided: AppRoutingModule */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppRoutingModule", function() { return AppRoutingModule; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-
-
-
-const routes = [];
-let AppRoutingModule = class AppRoutingModule {
-};
-AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-        imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes)],
-        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
-    })
-], AppRoutingModule);
-
-
-
-/***/ }),
-
 /***/ "./src/app/app.component.css":
 /*!***********************************!*\
   !*** ./src/app/app.component.css ***!
@@ -549,26 +520,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm2015/http.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 
 
 
 //import { CookieService } from 'ngx-cookie-service';
+
 let AppComponent = class AppComponent {
-    constructor(_service) {
+    constructor(_service, router) {
         this._service = _service;
+        this.router = router;
         this.postvalue = null;
         this.cookieValue = null;
     }
     ngOnInit() {
         this._service.post("http://18.130.87.97:82/api/a8Captiveportal/V2/AutoLogin", {
-            "SSIDName": "Test Linux CP",
-            "ServerIP": "10.0.1.1",
+            "SSIDName": "PAID-WIFI",
+            "ServerIP": "192.168.1.4",
             "Device": {
                 "MacAddress": "12:65:7c:lk:09",
             }
         })
             .subscribe(data => {
-            let postvalue = 'register';
+            console.log("Success");
+            this.router.navigate(['/registration']);
         }, error => {
             console.log("In Error");
             console.log("Error", error);
@@ -577,7 +552,8 @@ let AppComponent = class AppComponent {
     }
 };
 AppComponent.ctorParameters = () => [
-    { type: _angular_http__WEBPACK_IMPORTED_MODULE_2__["Http"] }
+    { type: _angular_http__WEBPACK_IMPORTED_MODULE_2__["Http"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
 ];
 AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -606,7 +582,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm2015/http.js");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _AdminConfig_login_page_login_page_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./AdminConfig/login-page/login-page.component */ "./src/app/AdminConfig/login-page/login-page.component.ts");
 /* harmony import */ var _AdminConfig_registration_page_registration_page_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./AdminConfig/registration-page/registration-page.component */ "./src/app/AdminConfig/registration-page/registration-page.component.ts");
@@ -619,6 +595,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+//import { AuthGuard } from './_guards';
 
 
 
@@ -638,7 +615,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
             _angular_http__WEBPACK_IMPORTED_MODULE_4__["HttpModule"],
-            _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"]
+            _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]
         ],
         providers: [],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]]
@@ -714,7 +691,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\somph\source\repos\angular_with_aspnetcore\CPUI.Core\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\somph\Desktop\Desktop\CPUI_POC_Angular\angular_with_aspnetcore\CPUI.Core\src\main.ts */"./src/main.ts");
 
 
 /***/ })

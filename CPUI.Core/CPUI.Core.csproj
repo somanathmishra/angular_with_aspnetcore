@@ -24,4 +24,22 @@
     <None Remove="out-tsc\**" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <Content Remove="src\app\_guards\auth.guard.ts" />
+    <Content Remove="src\app\_guards\index.ts" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <None Remove="src\app\_guards\auth.guard.ts" />
+    <None Remove="src\app\_guards\index.ts" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <TypeScriptCompile Include="src\app\_guards\auth.guard.ts" />
+    <TypeScriptCompile Include="src\app\_guards\index.ts" />
+  </ItemGroup>
+
 </Project>

@@ -10,6 +10,7 @@ export class RegistrationPageComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log("Inside Registration");
   }
 
 }
