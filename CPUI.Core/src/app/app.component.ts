@@ -21,13 +21,12 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
 
-    this._service.post("http://18.130.87.97:82/api/a8Captiveportal/V2/AutoLogin",
+    this._service.post("http://portal1.airloc8.com:82/api/a8Captiveportal/V2/AutoLogin",
       {
-        "SSIDName": "PAID-WIFI",
-        "ServerIP": "192.168.1.4",
-        "Device":
-        {
-          "MacAddress": "12:65:7c:lk:09",
+        "SSIDName": "VIP WIFI",
+        "ServerIP": "37.191.118.234",
+        "Device": {
+          "MacAddress": "7c:c5:37:c0:d3:d3",
         }
       })
       .subscribe(data => {

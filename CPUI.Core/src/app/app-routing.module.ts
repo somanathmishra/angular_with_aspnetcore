@@ -9,10 +9,10 @@ import { ThomsonRegistrationComponent } from './BeSpokeConfig/thomson-registrati
 
 const routes: Routes = [
 //  { path: '', component:_guards,  canActivate: [AuthGuard] },
-  { path: 'loginpage', component: LoginPageComponent },
+  //{ path: 'loginpage', component: LoginPageComponent },
   { path: 'registration', component: RegistrationPageComponent },
-  { path: 'BeSpokeConfig/deezer-registration/deezer-registration.component', component: DeezerRegistrationComponent },
-  { path: 'BeSpokeConfig/thomson-registration/thomson-registration.component', component: ThomsonRegistrationComponent}
+  //{ path: 'BeSpokeConfig/deezer-registration/deezer-registration.component', component: DeezerRegistrationComponent },
+  //{ path: 'BeSpokeConfig/thomson-registration/thomson-registration.component', component: ThomsonRegistrationComponent}
 ];
 
 @NgModule({

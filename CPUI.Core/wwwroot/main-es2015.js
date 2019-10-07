@@ -84,7 +84,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\r\n<h1>Sample HttpPost data example</h1>\r\n\r\n\r\n\r\n<html>\r\n<body>\r\n  \r\n\r\n</body>\r\n</html>\r\n\r\n\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\r\n<h1>Sample HttpPost data example</h1>\r\n\r\n\r\n\r\n<html>\r\n<body>\r\n  <router-outlet></router-outlet>\r\n\r\n</body>\r\n</html>\r\n\r\n\r\n");
 
 /***/ }),
 
@@ -494,6 +494,43 @@ ThomsonRegistrationComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"](
 
 /***/ }),
 
+/***/ "./src/app/app-routing.module.ts":
+/*!***************************************!*\
+  !*** ./src/app/app-routing.module.ts ***!
+  \***************************************/
+/*! exports provided: AppRoutingModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppRoutingModule", function() { return AppRoutingModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _AdminConfig_registration_page_registration_page_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./AdminConfig/registration-page/registration-page.component */ "./src/app/AdminConfig/registration-page/registration-page.component.ts");
+
+
+
+
+//import { AuthGuard } from './_guards';
+const routes = [
+    //  { path: '', component:_guards,  canActivate: [AuthGuard] },
+    //{ path: 'loginpage', component: LoginPageComponent },
+    { path: 'registration', component: _AdminConfig_registration_page_registration_page_component__WEBPACK_IMPORTED_MODULE_3__["RegistrationPageComponent"] },
+];
+let AppRoutingModule = class AppRoutingModule {
+};
+AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes)],
+        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
+    })
+], AppRoutingModule);
+
+
+
+/***/ }),
+
 /***/ "./src/app/app.component.css":
 /*!***********************************!*\
   !*** ./src/app/app.component.css ***!
@@ -534,11 +571,11 @@ let AppComponent = class AppComponent {
         this.cookieValue = null;
     }
     ngOnInit() {
-        this._service.post("http://18.130.87.97:82/api/a8Captiveportal/V2/AutoLogin", {
-            "SSIDName": "PAID-WIFI",
-            "ServerIP": "192.168.1.4",
+        this._service.post("http://portal1.airloc8.com:82/api/a8Captiveportal/V2/AutoLogin", {
+            "SSIDName": "VIP WIFI",
+            "ServerIP": "37.191.118.234",
             "Device": {
-                "MacAddress": "12:65:7c:lk:09",
+                "MacAddress": "7c:c5:37:c0:d3:d3",
             }
         })
             .subscribe(data => {
@@ -582,20 +619,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm2015/http.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _AdminConfig_login_page_login_page_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./AdminConfig/login-page/login-page.component */ "./src/app/AdminConfig/login-page/login-page.component.ts");
-/* harmony import */ var _AdminConfig_registration_page_registration_page_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./AdminConfig/registration-page/registration-page.component */ "./src/app/AdminConfig/registration-page/registration-page.component.ts");
-/* harmony import */ var _BeSpokeConfig_deezer_registration_deezer_registration_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./BeSpokeConfig/deezer-registration/deezer-registration.component */ "./src/app/BeSpokeConfig/deezer-registration/deezer-registration.component.ts");
-/* harmony import */ var _BeSpokeConfig_thomson_registration_thomson_registration_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./BeSpokeConfig/thomson-registration/thomson-registration.component */ "./src/app/BeSpokeConfig/thomson-registration/thomson-registration.component.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _AdminConfig_login_page_login_page_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./AdminConfig/login-page/login-page.component */ "./src/app/AdminConfig/login-page/login-page.component.ts");
+/* harmony import */ var _AdminConfig_registration_page_registration_page_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./AdminConfig/registration-page/registration-page.component */ "./src/app/AdminConfig/registration-page/registration-page.component.ts");
+/* harmony import */ var _BeSpokeConfig_deezer_registration_deezer_registration_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./BeSpokeConfig/deezer-registration/deezer-registration.component */ "./src/app/BeSpokeConfig/deezer-registration/deezer-registration.component.ts");
+/* harmony import */ var _BeSpokeConfig_thomson_registration_thomson_registration_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./BeSpokeConfig/thomson-registration/thomson-registration.component */ "./src/app/BeSpokeConfig/thomson-registration/thomson-registration.component.ts");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
 
 
 
 
 
+//import { Router } from '@angular/router';
 
 
-//import { AuthGuard } from './_guards';
 
 
 
@@ -605,20 +642,20 @@ let AppModule = class AppModule {
 AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
         declarations: [
-            _app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"],
-            _AdminConfig_login_page_login_page_component__WEBPACK_IMPORTED_MODULE_7__["LoginPageComponent"],
-            _AdminConfig_registration_page_registration_page_component__WEBPACK_IMPORTED_MODULE_8__["RegistrationPageComponent"],
-            _BeSpokeConfig_deezer_registration_deezer_registration_component__WEBPACK_IMPORTED_MODULE_9__["DeezerRegistrationComponent"],
-            _BeSpokeConfig_thomson_registration_thomson_registration_component__WEBPACK_IMPORTED_MODULE_10__["ThomsonRegistrationComponent"]
+            _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
+            _AdminConfig_login_page_login_page_component__WEBPACK_IMPORTED_MODULE_6__["LoginPageComponent"],
+            _AdminConfig_registration_page_registration_page_component__WEBPACK_IMPORTED_MODULE_7__["RegistrationPageComponent"],
+            _BeSpokeConfig_deezer_registration_deezer_registration_component__WEBPACK_IMPORTED_MODULE_8__["DeezerRegistrationComponent"],
+            _BeSpokeConfig_thomson_registration_thomson_registration_component__WEBPACK_IMPORTED_MODULE_9__["ThomsonRegistrationComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
             _angular_http__WEBPACK_IMPORTED_MODULE_4__["HttpModule"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]
+            _app_routing_module__WEBPACK_IMPORTED_MODULE_10__["AppRoutingModule"]
         ],
         providers: [],
-        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]]
+        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
     })
 ], AppModule);
 
